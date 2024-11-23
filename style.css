@@ -1,0 +1,337 @@
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url("hexagon.jpg");
+    background-size: 100vw 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: scroll;
+    position: relative;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes fadeVid {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    52%{
+        opacity: 1;
+    }
+    96%{
+        opacity: 1;
+    }
+    98%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+main{
+    /* height: 100%; */
+    width: 100%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & .top{
+        flex: 1 1 5vh;
+        display: flex;
+        flex-direction: column;
+        & h1{
+            font-size: 2em;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1.5px rgba(10,10,10,0.8) solid;
+        }
+        & .inst{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            border-bottom: 1.5px rgba(10,10,10,0.8) solid;
+            & h3{
+                margin: 0;
+            }
+            & ol{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 50%;
+                font-size: 0.7em;
+                font-weight: 600;
+                & li{
+                    transition: 0.2s;
+                }
+                & li:hover{
+                    filter: drop-shadow(0 0 5px green);
+                }
+            }
+        }
+    }
+    & .bottom{
+        flex: 1 1 95vh;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    & .mainPanel{
+        max-height: 700px;
+        min-height: 500px;
+        border-radius: 30px;
+        border: 1.5px rgba(255,255,255,0.8) solid;
+        background-color: rgba(0,250,250,0.2);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        
+    }
+    & .left{
+        flex: 1 1 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+        & form{
+            & .submitCont{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                & .submit{
+                    width: 30%;
+                    font-size: 1em;
+                    font-weight: 600;
+                    padding: 5px;
+                    border: 1.5px black solid;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+            }
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            & #male, #female{
+                border: 1.5px black solid;
+            }
+            & .cboxes{
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                & div{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: start;
+                    font-size: 1em;
+                    font-weight: 600;
+                    padding: 5px;
+                }
+            }
+            & #course{
+                width: 100%;
+                border: 1.5px black solid;
+                border-radius: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 1em;
+            }
+            & #name, #email, #age{
+                border: 1.5px black solid;
+                border-radius: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 1em;
+            }
+            
+            & .label{
+                padding: 5px;
+                font-size: 1em;
+                font-weight: 600;
+            }
+            & .inputArea{
+                padding-top: 5px;
+                padding-bottom: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+            & .rdbCont{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            & .rdbCont label{
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+        }
+    }
+    & .right{
+        background-image: url("istockphoto-182472346-612x612.jpg");
+        background-size: 100% 100%;
+        flex: 1 1 500px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        & .univDeets{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end;
+        }
+        & p{
+            margin: 0;
+            text-align: end;
+        }
+        & #p1{
+            font-size: 1em;
+            font-weight: 600;
+        }
+        & #p2{
+            font-size: 0.8em;
+        }
+        & .logo{
+            margin: 0;
+            width: 100px;
+            aspect-ratio: 1/1;
+        }
+        & video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 100%;
+            animation: fadeVid;
+            animation-duration: 24s;
+            animation-iteration-count: infinite;
+        }
+        & .someWordsCont{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+        }
+        & #someWords, #someWords2{
+            font-size: 2em;
+            color: white;
+            text-align: start;
+            animation: fadeVid;
+            animation-duration: 24s;
+            animation-iteration-count: infinite;
+        }
+    }
+    & .rockBottom{
+        margin-top: 10px;
+        width: 100%;
+        & table{
+            width: 100%;
+            border: 1.5px black solid;
+            border-radius: 30px;
+            overflow: hidden;
+            padding: 10px;
+            background-color: rgba(0,250,250,0.2);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+            & th{
+                background-color: rgba(0,250,250,1);                
+            }
+            & .data{
+                background-color: rgba(0,250,250,0.2);
+                text-align: center;
+                transition: 0.2s;
+            }
+            & .data:hover{
+                transform: scale(1.03);
+                background-color: rgba(0,250,250,0.5);
+            }
+            & .data:hover + .data{
+                transform: scale(1.02);
+                background-color: rgba(0,250,250,0.4);
+            }
+            & .data:hover +*+ .data{
+                transform: scale(1.01);
+                background-color: rgba(0,250,250,0.3);
+            }
+            & .data:has(+ .data:hover){
+                transform: scale(1.02);
+                background-color: rgba(0,250,250,0.4);
+            }
+            & .data:has(+*+ .data:hover){
+                transform: scale(1.01);
+                background-color: rgba(0,250,250,0.3);
+            }
+        }
+    }
+    & .abtTheDev{
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        & .card{
+            border: 1.5px rgba(10,10,10,0.8) solid;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            & img{
+                width: 120%;
+                height: 100%;
+                transition: 0.5s;
+            }
+            & h1{
+                position: absolute;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: 0.3s;
+                z-index: 2;
+            }
+        }
+        & #card1{
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        & #card2{
+            z-index: 2;
+        }
+        & #card3{
+            z-index: 1;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+}
